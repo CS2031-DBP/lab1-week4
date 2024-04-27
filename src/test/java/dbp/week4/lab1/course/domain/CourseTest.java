@@ -26,8 +26,8 @@ class CourseTest {
     void setUp() {
         teacher = new Teacher("Jorge", "Rios", 20.0, "jriosa@utec.edu.pe", LocalDate.of(1996, 1, 29));
         student1 = new Student("Jorge", "Rios", "jorge.rios.a@utec.edu.pe", LocalDate.of(1996, 1, 29));
-        student1 = new Student("John", "Doe", "john.doe@example.com", LocalDate.of(2000, 1, 1));
-        student1 = new Student("Carolina", "Giraldo", "carolina.giraldo@example.com", LocalDate.of(1991, 2, 14));
+        student2 = new Student("John", "Doe", "john.doe@example.com", LocalDate.of(2000, 1, 1));
+        student3 = new Student("Carolina", "Giraldo", "carolina.giraldo@example.com", LocalDate.of(1991, 2, 14));
         students = new ArrayList<>();
         students.add(student1);
         students.add(student2);
