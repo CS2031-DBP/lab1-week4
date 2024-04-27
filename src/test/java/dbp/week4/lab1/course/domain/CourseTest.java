@@ -40,6 +40,7 @@ class CourseTest {
         assertNotNull(course);
     }
 
+    // Valores mínimos requeridos
     @Test
     void shouldCreateCourse() {
         assertEquals("Arte y Tecnología", course.getName());

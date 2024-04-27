@@ -29,16 +29,22 @@ class CourseRepositoryTest extends AbstractContainerBaseTest {
     Course course2;
     Course course3;
 
+    Teacher teacher1;
+
+    Teacher teacher2;
+
+    Teacher teacher3;
+
     @BeforeEach
     public void setUp() {
         course1 = new Course("Desarrollo Basado en Plataformas", 3, 6);
-        Teacher teacher1 = new Teacher("Jorge", "Rios", 20.0, "jriosa@utec.edu.pe", LocalDate.of(1996, 1, 29));
+        teacher1 = new Teacher("Jorge", "Rios", 20.0, "jriosa@utec.edu.pe", LocalDate.of(1996, 1, 29));
         course1.setTeacher(teacher1);
         course2 = new Course("Arte y Tecnología", 2, 4);
-        Teacher teacher2 = new Teacher("John", "Doe", 20.0, "jdoe@utec.edu.pe", LocalDate.of(1996, 1, 29));
+        teacher2 = new Teacher("John", "Doe", 20.0, "jdoe@utec.edu.pe", LocalDate.of(1996, 1, 29));
         course2.setTeacher(teacher2);
         course3 = new Course("Ética", 3, 4);
-        Teacher teacher3 = new Teacher("Carolina", "Giraldo", 20.0, "cgiraldo@utec.edu.pe", LocalDate.of(1996, 1, 29));
+        teacher3 = new Teacher("Carolina", "Giraldo", 20.0, "cgiraldo@utec.edu.pe", LocalDate.of(1996, 1, 29));
         course3.setTeacher(teacher3);
 
         entityManager.persist(teacher1);
@@ -52,7 +58,7 @@ class CourseRepositoryTest extends AbstractContainerBaseTest {
 
     @Test
     void shouldFindByTeacherId() {
-        List<Course> courses = repository.findByTeacherId(course1.getId());
+        List<Course> courses = repository.findByTeacherId(teacher1.getId());
 
         assertNotNull(courses);
         assertEquals(1, courses.size());
@@ -61,7 +67,7 @@ class CourseRepositoryTest extends AbstractContainerBaseTest {
 
     @Test
     void shouldNotFindByTeacherId() {
-        List<Course> courses = repository.findByTeacherId(course1.getId());
+        List<Course> courses = repository.findByTeacherId(teacher2.getId());
 
         assertNotNull(courses);
         assertEquals(1, courses.size());
